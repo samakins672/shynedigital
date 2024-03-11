@@ -247,7 +247,7 @@
     </section>
 
 
-    <section class="explore-section section-padding" id="section_4">
+    <!-- <section class="explore-section section-padding" id="section_4">
       <div class="container">
 
         <div class="col-12 text-center">
@@ -518,7 +518,7 @@
 
           </div>
         </div>
-    </section>
+    </section> -->
 
 
     <section class="contact-section section-padding section-bg" id="section_5">
@@ -647,55 +647,55 @@
         }
       });
 
-      function fetchAndDisplayNews(apiUrl, containerClass) {
-        $.ajax({
-          url: apiUrl,
-          method: 'GET',
-          success: function (data) {
-            // Clear previous news
-            $(containerClass).empty();
+      // function fetchAndDisplayNews(apiUrl, containerClass) {
+      //   $.ajax({
+      //     url: apiUrl,
+      //     method: 'GET',
+      //     success: function (data) {
+      //       // Clear previous news
+      //       $(containerClass).empty();
 
-            // Check if data is available
-            if (data.articles) {
-              // Limit the number of articles to 3
-              var articles = data.articles.slice(0, 3);
+      //       // Check if data is available
+      //       if (data.articles) {
+      //         // Limit the number of articles to 3
+      //         var articles = data.articles.slice(0, 3);
 
-              // Populate template with new news articles
-              articles.forEach(function (article) {
-                var sourceName = article.source.name;
-                var publishedAt = new Date(article.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+      //         // Populate template with new news articles
+      //         articles.forEach(function (article) {
+      //           var sourceName = article.source.name;
+      //           var publishedAt = new Date(article.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 
-                $(containerClass).append(`
-                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
-                            <div class="custom-block bg-white shadow-lg">
-                                <a href="${article.url}" target="_blank">
-                                    <div class="d-flex flex-column">
-                                        <div>
-                                            <h5 class="mb-2 d-flex justify-contents-between">${sourceName} <span class="badge bg-design rounded-pill ms-auto">${publishedAt}</span></h5>
-                                        </div>
-                                        <p class="mb-0">${article.title}</p>
-                                    </div>
-                                    <img src="${article.urlToImage}" class="custom-block-image img-fluid" alt="${article.title}">
-                                </a>
-                            </div>
-                        </div>
-                    `);
-              });
-            }
-          },
-          error: function (xhr, status, error) {
-            console.error(status, error);
-          }
-        });
-      }
+      //           $(containerClass).append(`
+      //                   <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+      //                       <div class="custom-block bg-white shadow-lg">
+      //                           <a href="${article.url}" target="_blank">
+      //                               <div class="d-flex flex-column">
+      //                                   <div>
+      //                                       <h5 class="mb-2 d-flex justify-contents-between">${sourceName} <span class="badge bg-design rounded-pill ms-auto">${publishedAt}</span></h5>
+      //                                   </div>
+      //                                   <p class="mb-0">${article.title}</p>
+      //                               </div>
+      //                               <img src="${article.urlToImage}" class="custom-block-image img-fluid" alt="${article.title}">
+      //                           </a>
+      //                       </div>
+      //                   </div>
+      //               `);
+      //         });
+      //       }
+      //     },
+      //     error: function (xhr, status, error) {
+      //       console.error(status, error);
+      //     }
+      //   });
+      // }
 
-      fetchAndDisplayNews('https://newsapi.org/v2/everything?q=forex trading&sortBy=popularity&apiKey=81846e2d884341299eea7f99b7d02a6b', '.forex-blogs');
+      // fetchAndDisplayNews('https://newsapi.org/v2/everything?q=forex trading&sortBy=popularity&apiKey=81846e2d884341299eea7f99b7d02a6b', '.forex-blogs');
 
-      fetchAndDisplayNews('https://newsapi.org/v2/everything?q=crypto currency&sortBy=popularity&apiKey=81846e2d884341299eea7f99b7d02a6b', '.crypto-blogs');
+      // fetchAndDisplayNews('https://newsapi.org/v2/everything?q=crypto currency&sortBy=popularity&apiKey=81846e2d884341299eea7f99b7d02a6b', '.crypto-blogs');
 
-      fetchAndDisplayNews('https://newsapi.org/v2/everything?q=blockchain&sortBy=popularity&apiKey=81846e2d884341299eea7f99b7d02a6b', '.blockchain-blogs');
+      // fetchAndDisplayNews('https://newsapi.org/v2/everything?q=blockchain&sortBy=popularity&apiKey=81846e2d884341299eea7f99b7d02a6b', '.blockchain-blogs');
 
-      fetchAndDisplayNews('https://newsapi.org/v2/everything?q=NFTs&sortBy=popularity&apiKey=81846e2d884341299eea7f99b7d02a6b', '.nft-blogs');
+      // fetchAndDisplayNews('https://newsapi.org/v2/everything?q=NFTs&sortBy=popularity&apiKey=81846e2d884341299eea7f99b7d02a6b', '.nft-blogs');
 
     });
 
